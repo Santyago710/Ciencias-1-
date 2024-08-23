@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
  * @author nicol
  */
 public class HeapSort {
-int pasos = 0;
-int ciclos = 0;
+static int pasos = 0;
+static int ciclos = 0;
     
     public void organizar(int[] arreglo ){
         
@@ -21,6 +21,7 @@ int ciclos = 0;
         //crea el monticulo
         for (int i = longitud / 2 - 1; i >= 0; i-- ){
             pasos +=3;
+           
             amontonar(arreglo, longitud, i); 
         }
         
@@ -50,7 +51,7 @@ int ciclos = 0;
         if(izquierda < longitud && arreglo[izquierda] > arreglo[mayor]){
          mayor = izquierda;
          pasos+=2;
-         ciclos += 1;
+         ciclos ++;
  
         }
         
@@ -58,7 +59,7 @@ int ciclos = 0;
         if(derecha < longitud  && arreglo[derecha] > arreglo[mayor]){
             mayor = derecha;
             pasos += 2;
-            ciclos += 1;
+            ciclos ++;
         }
            
         //Si el mayor no es la raiz
@@ -67,8 +68,8 @@ int ciclos = 0;
             arreglo[i] = arreglo[mayor];
             arreglo[mayor] = cambiar;
             pasos += 4;
-            ciclos +=1;
-            System.out.println("El numero de pasos es de "+ pasos );
+            
+            
             //Recursion 
             amontonar(arreglo, longitud, mayor);
             
@@ -103,6 +104,9 @@ int ciclos = 0;
         
         System.out.println("El arreglo ordenado es");
         mostrarArreglo(arreglo);
+
+        System.out.println("Pasos "+ pasos);
+        System.out.println("Ciclos "+ ciclos);
     }
     
 }
