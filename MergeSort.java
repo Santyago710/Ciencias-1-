@@ -10,38 +10,36 @@ public class MergeSort {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el tamaño del array (100, 1000, 10000): ");
         int size = scanner.nextInt();
-        stepCounter++; // Contando el paso de la lectura del tamaño
+        
         
         int[] array = generateRandomArray(size);
-        stepCounter++; // Contando el paso de la generación del array
-        
+       
         System.out.println("Arreglo desordenado:");
         printArray(array);
-        stepCounter++; // Contando el paso de la impresión del array desordenado
-        
+       
         // Resetea los contadores antes de ordenar
         cycleCounter = 0;
-        stepCounter++; // Contando el paso del reseteo de los contadores
+        
         mergeSort(array, 0, array.length - 1);
         
         System.out.println("\nArreglo ordenado:");
         printArray(array);
-        stepCounter++; // Contando el paso de la impresión del array ordenado
+        
         
         System.out.println("\nNúmero de ciclos: " + cycleCounter);
         System.out.println("Número de pasos: " + stepCounter);
-        stepCounter++; // Contando el paso de la impresión de los contadores
+        
     }
 
     // Función para generar un array de números aleatorios
     public static int[] generateRandomArray(int size) {
         Random random = new Random();
-        stepCounter++; // Contando el paso de la creación del objeto Random
+        
         int[] array = new int[size];
-        stepCounter++; // Contando el paso de la creación del array
+        
         for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(10000);  // Genera números aleatorios entre 0 y 9999
-            stepCounter++; // Contando cada paso del bucle
+           
         }
         return array;
     }
@@ -126,9 +124,9 @@ public class MergeSort {
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
-            stepCounter++; // Contando cada paso de la impresión
+           
         }
         System.out.println();
-        stepCounter++; // Contando el paso de la nueva línea
+       
     }
 }
