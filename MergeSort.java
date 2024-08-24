@@ -46,7 +46,7 @@ public class MergeSort {
 
     // Implementación del algoritmo Merge Sort
     public static void mergeSort(int[] array, int left, int right) {
-        stepCounter++; // Contando la entrada a la función mergeSort
+        
         if (left < right) {
             int middle = (left + right) / 2;
             stepCounter++; // Contando el cálculo del medio
@@ -62,11 +62,11 @@ public class MergeSort {
 
     // Función para mezclar y ordenar dos subarreglos
     public static void merge(int[] array, int left, int middle, int right) {
-        stepCounter++; // Contando la entrada a la función merge
+        
         
         int n1 = middle - left + 1;
         int n2 = right - middle;
-        stepCounter++; // Contando la asignación de n1 y n2
+        
 
         int[] leftArray = new int[n1];
         int[] rightArray = new int[n2];
@@ -74,11 +74,11 @@ public class MergeSort {
         
         for (int i = 0; i < n1; i++) {
             leftArray[i] = array[left + i];
-            stepCounter++; // Contando cada paso del bucle
+            stepCounter += 3; // Contando cada paso del bucle
         }
         for (int j = 0; j < n2; j++) {
             rightArray[j] = array[middle + 1 + j];
-            stepCounter++; // Contando cada paso del bucle
+            stepCounter += 3; // Contando cada paso del bucle
         }
 
         int i = 0, j = 0;
@@ -86,12 +86,12 @@ public class MergeSort {
         stepCounter++; // Contando la inicialización de los índices
         
         while (i < n1 && j < n2) {
-            stepCounter++; // Contando la evaluación de la condición del bucle
+            stepCounter += 2; // Contando la evaluación de la condición del bucle
             cycleCounter++; // Incrementa el contador de ciclos
             if (leftArray[i] <= rightArray[j]) {
                 array[k] = leftArray[i];
                 i++;
-                stepCounter += 3; // Contando la comparación y la asignación
+                stepCounter += 3; // Contando la comparación 
             } else {
                 array[k] = rightArray[j];
                 j++;
