@@ -27,7 +27,7 @@ public class ArbolAvl<T extends Comparable<T>> implements Arbol<T> {
         } else if (data.compareTo(nodo.getData()) > 0) {
             nodo.setHijoDer(insertar(data, nodo.getHijoDer()));
         } else {
-            return nodo;  // Evita duplicados
+            nodo.setHijoDer(insertar(data, nodo.getHijoDer()));
         }
 
         actualizarAltura(nodo);
